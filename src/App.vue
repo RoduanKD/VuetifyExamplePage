@@ -28,18 +28,49 @@
       <v-spacer />
 
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
         text
+        @click="$vuetify.goTo('#posts')"
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+        Posts
+      </v-btn>
+      <v-btn
+        text
+        @click="$vuetify.goTo('#gallery')"
+      >
+        Gallery
+      </v-btn>
+      <v-btn
+        text
+        @click="$vuetify.goTo('#stats')"
+      >
+        Statistics
+      </v-btn>
+      <v-btn
+        text
+        @click="$vuetify.goTo('#users')"
+      >
+        Users
+      </v-btn>
+      <v-btn
+        icon
+        color="white"
+        @click="$vuetify.theme.dark = !$vuetify.theme.dark"
+      >
+        <v-icon v-if="!$vuetify.theme.dark">
+          mdi-weather-night
+        </v-icon>
+        <v-icon v-else>
+          mdi-weather-sunny
+        </v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-main>
       <router-view />
     </v-main>
+    <v-footer class="text-center">
+      &copy; 2022
+    </v-footer>
   </v-app>
 </template>
 
