@@ -14,7 +14,10 @@
       cols="4"
     >
       <v-hover v-slot="{ hover }">
-        <v-img src="https://picsum.photos/500">
+        <v-img
+          src="https://picsum.photos/500"
+          transition="slide-x-transition"
+        >
           <v-overlay
             v-if="hover"
             absolute
